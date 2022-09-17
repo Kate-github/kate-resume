@@ -1,11 +1,11 @@
 <div class="container">
 
     <div class="row">
-        <div class="col col-md-3" id="sidebar">
+        <div class="col col-3" id="sidebar">
             <img id="imgProfile" src="images/profile.jpg" width="150" class="rounded-circle">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><i class="fa-solid fa-diamond"></i> Skills</h5>
+                    <h5 class="card-title">Skills</h5>
                     <p class="card-text">
 
                     <ul class="list-group">
@@ -19,18 +19,16 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" id="awards">
                 <div class="card-body">
-                    <h5 class="card-title"><i class="fa-solid fa-diamond"></i> Honor Awards</h5>
+                    <h5 class="card-title"> Honor Awards</h5>
                     <p class="card-text">
 
                     <ul class="list-group">
                         {{#each data.honor_awards as |honor|}}
                         <li class="list-group-item">
-                            <span class="">{{honor.company}}</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="">{{honor.award}}</span>
+                            <h6 class="">{{honor.award}}</h6>
+                            <small>{{honor.company}}</small>
                         </li>
                         {{/each}}
                     </ul>
@@ -38,9 +36,9 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" id="languages">
                 <div class="card-body">
-                    <h5 class="card-title"><i class="fa-solid fa-diamond"></i> Languages</h5>
+                    <h5 class="card-title"> Languages</h5>
                     <p class="card-text">
 
                     <ul class="list-group">
@@ -54,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <div class="col col-md-9">
+        <div class="col col-9" id="experience">
             <h1>{{data.name}}</h1>
             <p>{{data.description}}</p>
             <div class="container">
@@ -65,21 +63,53 @@
                             <a href="mailto:{{data.email}}"> {{data.email}}</a>
                         </div>
                         <span><i class="fa-solid fa-phone"></i> {{data.phone_number}}</span>
+                        <div><i class="fa-solid fa-location-pin"></i> {{data.location}}</div>
                     </div>
                     <div class="col col-sm-6">
-                        <div><i class="fa-solid fa-location-pin"></i> {{data.location}}</div>
                         <div>
                             <i class="fa-brands fa-linkedin"></i>
                             <a href="{{data.linkedIn}}">{{data.linkedIn}}</a>
                         </div>
+                        <div>
+                            <i class="fa-brands fa-github"></i>
+                            <a href="{{data.github}}">{{data.github}}</a>
+                        </div>
+
                     </div>
-                    <div class="col col-md-9">
-                        <h2><i class="fa-solid fa-diamond"></i> Work Experience </h2>
+                </div>
+            </div>
+            <div class="container" id="project-section">
+                <div class="row">
+                    <div class="col col-md-12">
+                        <h2> Class Projects</h2>
+                        {{#each data.class_projects as |project|}}
+                        <h3>{{project.name}}</h3>
+                        {{!-- <h4>{{project.roles.join(', ')}}</h4> --}}
+                        <p>{{project.description}}</p>
+                        <h5>Technologies Used</h5>
+                        <ul class="list-group">
+                            {{#each project.technologies as |technology|}}
+                            <li class="list-group-item">
+                                <span class="">{{technology}}</span>
+                            </li>
+                            {{/each}}
+                        </ul>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="work-section">
+                <div class="row">
+                    <div class="col col-md-12">
+                        <h2> Work Experience</h2>
                         {{#each data.work_experience as |work|}}
                         <h3>{{work.company}}</h3>
-                        <div>{{work.title}}</div>
-                        <div>{{work.location}}</div>
-                        <div>{{work.start_date}} - {{work.end_date}}</div>
+                        <h4>{{work.title}}</h4>
+
+                        <div class="row">
+                            <div class="col-6">{{work.start_date}} - {{work.end_date}}</div>
+                            <div class="col-6 work-location">{{work.location}}</div>
+                        </div>
                         <p>
                         <ul class="list-group">
                             {{#each work.responsibilities as |responsibility|}}

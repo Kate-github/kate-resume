@@ -5,6 +5,10 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+        integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,24 +17,53 @@
             padding: 15px 15px 15px 15px;
             text-align: center;
             background-color: aliceblue;
+            border-right: solid 1px steelblue;
         }
+
         #sidebar .card {
-            text-align:left;
-            border:none;
+            text-align: left;
+            border: none;
         }
+
         .badge-secondary {
             background-color: slategray;
         }
+
         .list-group {
             --bs-list-group-border-width: 0;
         }
+
         .list-group-item {
-            --bs-list-group-item-padding-x:.25rem;
-            --bs-list-group-item-padding-y:.25rem;
+            --bs-list-group-item-padding-x: .25rem;
+            --bs-list-group-item-padding-y: .25rem;
         }
+
         #imgProfile {
             margin: auto;
-            border:solid 3px slategray;
+            border: solid 3px slategray;
+        }
+
+        .fa-diamond {
+            color: steelblue;
+            margin-right: 5px;
+        }
+
+        #experience .list-group {
+            list-style-type: circle;
+            margin-left: 15px;
+        }
+
+        #experience .list-group-item {
+            display: list-item;
+        }
+
+        #work-section,
+        #project-section {
+            margin-top: 45px;
+        }
+
+        .work-location {
+            text-align: right;
         }
     </style>
 </head>
