@@ -1,0 +1,98 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col col-md-3" id="sidebar">
+            <img id="imgProfile" src="images/profile.jpg" width="150" class="rounded-circle">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fa-solid fa-diamond"></i> Skills</h5>
+                    <p class="card-text">
+
+                    <ul class="list-group">
+                        {{#each data.skills as |skill|}}
+                        <li class="list-group-item">
+                            <span class="badge badge-secondary">{{skill}}</span>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fa-solid fa-diamond"></i> Honor Awards</h5>
+                    <p class="card-text">
+
+                    <ul class="list-group">
+                        {{#each data.honor_awards as |honor|}}
+                        <li class="list-group-item">
+                            <span class="">{{honor.company}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="">{{honor.award}}</span>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fa-solid fa-diamond"></i> Languages</h5>
+                    <p class="card-text">
+
+                    <ul class="list-group">
+                        {{#each data.languages as |language|}}
+                        <li class="list-group-item">
+                            <span class="">{{language.name}} - {{language.proficiency}}</span>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col col-md-9">
+            <h1>{{data.name}}</h1>
+            <p>{{data.description}}</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col col-sm-6">
+                        <div>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:{{data.email}}"> {{data.email}}</a>
+                        </div>
+                        <span><i class="fa-solid fa-phone"></i> {{data.phone_number}}</span>
+                    </div>
+                    <div class="col col-sm-6">
+                        <div><i class="fa-solid fa-location-pin"></i> {{data.location}}</div>
+                        <div>
+                            <i class="fa-brands fa-linkedin"></i>
+                            <a href="{{data.linkedIn}}">{{data.linkedIn}}</a>
+                        </div>
+                    </div>
+                    <div class="col col-md-9">
+                        <h2><i class="fa-solid fa-diamond"></i> Work Experience </h2>
+                        {{#each data.work_experience as |work|}}
+                        <h3>{{work.company}}</h3>
+                        <div>{{work.title}}</div>
+                        <div>{{work.location}}</div>
+                        <div>{{work.start_date}} - {{work.end_date}}</div>
+                        <p>
+                        <ul class="list-group">
+                            {{#each work.responsibilities as |responsibility|}}
+                            <li class="list-group-item">
+                                <span class="">{{responsibility}}</span>
+                            </li>
+                            {{/each}}
+                        </ul>
+                        </p>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "kate-resume",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kate-github/kate-resume.git"
+  },
+  "author": "Kate Thao Lam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kate-github/kate-resume/issues"
+  },
+  "homepage": "https://github.com/Kate-github/kate-resume#readme"
+}
